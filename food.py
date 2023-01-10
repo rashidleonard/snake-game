@@ -17,3 +17,6 @@ class Food(Turtle):
         x = random.randint(-280, 280)
         y = random.randint(-280, 280)
         self.goto(x, y)
+
+
+# Ok so im trying to see if my GiHub is properly linked to my pycharm. this is not part of the code
