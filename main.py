@@ -47,12 +47,14 @@ while game_on:
         food.food_location()
         rashid.extend()
         score.new_score()
+        score.update_scoreboard()
 
     # detecting collision with wall
     if rashid.head.xcor() >= 290 or rashid.head.xcor() <= -290 or rashid.head.ycor() >= 290 or \
             rashid.head.ycor() <= -290:
         game_on = False
-        score.game_over()
+        # score.game_over()
+        score.reset()
 
     # detecting collision with tail
     for tur in rashid.new_turtles:
@@ -60,7 +62,9 @@ while game_on:
             pass
         elif rashid.head.distance(tur) < 10:
             game_on = False
-            score.game_over()
+            # score.game_over()
+            score.reset()
+
         # when i run this code, the game does not stop even though the snake bites its tail
-        # I will revisit sometime
+        # I should revisit sometime
 screen.exitonclick()
