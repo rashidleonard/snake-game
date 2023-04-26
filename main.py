@@ -47,7 +47,7 @@ while game_on:
         food.food_location()
         rashid.extend()
         score.new_score()
-        score.update_scoreboard()
+        # score.update_scoreboard()
 
     # detecting collision with wall
     if rashid.head.xcor() >= 290 or rashid.head.xcor() <= -290 or rashid.head.ycor() >= 290 or \
