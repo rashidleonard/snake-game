@@ -20,9 +20,9 @@ class Scoreboard(Turtle):
         # self.clear()
         # self.write(arg=f"Score: {self.score}", align=ALIGNMENT, font=FONT)
 
-    def update_scoreboard(self):
-        self.clear()
-        self.write(arg=f"Score: {self.score} High score: {self.high_score}", align=ALIGNMENT, font=FONT)
+    # def update_scoreboard(self):
+    #     self.clear()
+    #     self.write(arg=f"Score: {self.score} High score: {self.high_score}", align=ALIGNMENT, font=FONT)
 
     # def game_over(self):
     #     self.penup()
