@@ -55,3 +55,12 @@ class Snake:
     def game_over(self):
         if self.head.heading() >= 300 or self.head.heading() <= -300:
             print("Game Over")
+
+    def reset(self):
+        for block in self.new_turtles:
+            block.goto(1000, 1000)
+        self.new_turtles.clear()
+        self.create_snake()
+        self.head = self.new_turtles[0]
+
+

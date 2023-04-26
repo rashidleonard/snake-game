@@ -12,17 +12,13 @@ class Scoreboard(Turtle):
         self.color("white")
         self.penup()
         self.goto(0, 270)
-        self.write(arg=f"Score: {self.score}", align=ALIGNMENT, font=FONT)
+        self.write(arg=f"Score: {self.score} High Score: {self.high_score}", align=ALIGNMENT, font=FONT)
         self.hideturtle()
 
     def new_score(self):
         self.score += 1
-        # self.clear()
-        # self.write(arg=f"Score: {self.score}", align=ALIGNMENT, font=FONT)
-
-    # def update_scoreboard(self):
-    #     self.clear()
-    #     self.write(arg=f"Score: {self.score} High score: {self.high_score}", align=ALIGNMENT, font=FONT)
+        self.clear()
+        self.write(arg=f"Score: {self.score} High Score: {self.high_score}", align=ALIGNMENT, font=FONT)
 
     # def game_over(self):
     #     self.penup()
@@ -33,5 +29,7 @@ class Scoreboard(Turtle):
         self.clear()
         if self.score > self.high_score:
             self.high_score = self.score
+            with open("highest_score.txt", mode="w") as highscore:
+                highscore.write(f"{self.high_score}")
         self.score = 0
-        self.write(arg=f"Score: {self.score} High score: {self.high_score}", align=ALIGNMENT, font=FONT)
+        self.write(arg=f"Score: {self.score} High Score: {self.high_score}", align=ALIGNMENT, font=FONT)

@@ -52,18 +52,22 @@ while game_on:
     # detecting collision with wall
     if rashid.head.xcor() >= 290 or rashid.head.xcor() <= -290 or rashid.head.ycor() >= 290 or \
             rashid.head.ycor() <= -290:
-        game_on = False
+        # game_on = False
         # score.game_over()
+        # (both lines are commented out to prevent the game from pausing when the snake collide with the tail)
         score.reset()
+        rashid.reset()
 
     # detecting collision with tail
-    for tur in rashid.new_turtles:
-        if rashid.head == rashid.new_turtles[0]:
+    for block in rashid.new_turtles:
+        if block == rashid.new_turtles[0]:
             pass
-        elif rashid.head.distance(tur) < 10:
-            game_on = False
+        elif rashid.head.distance(block) < 10:
+            # game_on = False
             # score.game_over()
+            # (both lines are commented out to prevent the game from pausing when the snake collide with the tail)
             score.reset()
+            rashid.reset()
 
         # when i run this code, the game does not stop even though the snake bites its tail
         # I should revisit sometime
